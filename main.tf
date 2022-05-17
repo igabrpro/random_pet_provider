@@ -35,3 +35,13 @@ resource "null_resource" "igabr" {
     command = "echo resource name ${random_pet.server.id}"
   }
 }
+resource "null_resource" "igabr1" {
+
+  triggers = {
+    build_number = "Object ${random_pet.server.id}"
+  }
+
+  provisioner "local-exec" {
+    command = "echo resource name ${random_pet.server.id}"
+  }
+}
